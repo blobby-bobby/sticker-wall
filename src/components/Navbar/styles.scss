@@ -23,7 +23,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100dvh;
     width: 32vw;
     z-index: 20;
     box-sizing: border-box;
@@ -88,6 +88,7 @@
         width: 100vw;
         align-items: center;
         text-align: center;
+        padding: 2.5rem;
 
         &__close {
             align-self: self-end;

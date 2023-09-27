@@ -34,9 +34,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 90%;
         gap: .5rem;
-        margin-bottom: 2rem;
+        margin: 2rem;
+        text-align: center;
 
         &--hand {
             font-size: 30px;
@@ -49,7 +50,25 @@ path {
     fill: transparent;
   }
   
-  text {
+text {
     fill: var(--white);
     font-size: 40px;
   }
+
+// Smaller devices
+
+@media (max-width: 1024px) {
+    .wall {
+        min-height: 95%;
+        &__graphic {
+            max-width: 310px;
+            margin-bottom: 15vh;
+
+            &--curvedtext {
+                transform: scale(0.75);
+            }
+        }
+
+    } 
+
+}

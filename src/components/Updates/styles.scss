@@ -7,13 +7,16 @@
     left: 0;
     right: 0;
     z-index: 10;
-    width: 90vw;
-    min-height: 70vh;
-    padding: 2.5%;
-    margin: 2.5%;
+    width: calc(100% - 8rem);
+    height: calc(100% - 8rem);
+    margin: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     hr {
-        margin: 2rem 1rem 2rem 0;
+        margin-bottom: 2rem;
         border: 1px dotted;
     }
 
@@ -37,7 +40,7 @@
 
     &__container {
         overflow-y: scroll;
-        height: 60vh;
+        height: 70vh;
     }
 
     ::-webkit-scrollbar {
@@ -60,6 +63,7 @@
         &__content {
             display: flex;
             gap: 2rem;
+            margin: 0 1rem 2rem 1rem;
 
             img {
                 border-radius: 12px;
@@ -94,12 +98,35 @@
 
 // Smaller devices
 @media (max-width: 767px) {
+    .modal {
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        margin: .5rem;
+        padding: .5rem;
+
+        hr {
+            margin: 1rem;
+        }
+    }
     .update__content {
         flex-wrap: wrap;
         justify-content: center;
+        gap: .5rem;
 
         &--text {
             flex-basis: 100%;
+        }
+
+        p.description {
+            font-size: var(--sm-font);
+        }
+
+        p, span, ul {
+            margin-left: 0;
+        }
+
+        img {
+            max-height: 200px;
         }
     }
 }

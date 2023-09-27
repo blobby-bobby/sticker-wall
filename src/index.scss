@@ -82,3 +82,15 @@ a {
   color: #242222;
   font-family: var(--clash-semibold);
 }
+
+// Smaller devices
+
+@media (max-width: 577px) {
+  h2 {
+    font-size: var(--lg-font);
+  }
+
+  h3 {
+    font-size: var(--md-font2);
+  }
+}

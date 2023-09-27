@@ -42,7 +42,9 @@ const Wall: FunctionComponent = () => {
       {/* DECORATIONS & INSTRUCTIONS FOR THE WALL */}
         <div className='wall__graphic'>
           {/* Curved text */}
-          <ReactCurvedText width={500} height={100} cx={250} cy={100} rx={200} ry={65} startOffset={40} reversed={true} text='Bienvenue sur le' textProps={{"style": {"fontSize": "40"}}} textPathProps={{"fill": "#FFFFFF"}} />
+          <div className='wall__graphic--curvedtext'>
+            <ReactCurvedText width={500} height={100} cx={250} cy={100} rx={200} ry={65} startOffset={40} reversed={true} text='Bienvenue sur le'  textPathProps={{"fill": "#FFFFFF"}} />
+          </div>
           
           {/* IMG logo & smiley */}
           <img src={stickerWallText} alt="sticker-wall-text" className='wall__graphic--logo'/>
