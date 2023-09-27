@@ -1,17 +1,15 @@
-// Wall & Stickers
-
-export interface StickerType {
-	image: string,
-    name: string,
-	rotation: number,
-	xPosition: number,
-	yPosition: number,
-}
-
 // Array of sampler stickers
 type StickerImage = {
     name: string;
     path: string;
+}
+
+// Wall & Stickers
+export interface StickerType {
+	image: StickerImage,
+	rotation: number,
+	xPosition: number,
+	yPosition: number,
 }
 
 export const stickersImg: StickerImage[] = [

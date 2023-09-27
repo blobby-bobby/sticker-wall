@@ -3,8 +3,9 @@ import './styles.scss'
 import updateImg from '@/assets/cheese.png';
 import { FiX } from "react-icons/fi";
 import { AnimatePresence, motion } from 'framer-motion';
+import { FunctionComponent } from 'react';
 
-type Props = {
+type UpdatesProps = {
     onClose: () => void;
     isUpdatesOpen: boolean;
 }
@@ -12,7 +13,7 @@ type Props = {
 // Updates data
 const updates: Array<UpdatesType> = [
     {
-        day: "27/09/2023",
+      day: "27/09/2023",
 	    image: updateImg,
       title: "Lancement du Sticker Wall",
 	    description: 'Et voilà, le Sticker Wall est en ligne. Pour cette première version, la fonctionnalité "1 clic, 1 sticker sur le mur" est fontionnelle, et les bases ont été posées pour faire évoluer ce Sticker Wall =).',
@@ -42,15 +43,15 @@ const updateVars = {
     }
   }
 
-const Updates = ({isUpdatesOpen, onClose}: Props) => {
+const Updates: FunctionComponent<UpdatesProps> = (props) => {
 
   return (
     <AnimatePresence>
-      { isUpdatesOpen && (
+      { props.isUpdatesOpen && (
         <motion.div className="modal" variants={updateVars} initial="initial" animate="animate" exit="exit">
 
           {/* CLOSE BUTTON */}
-            <button className='modal__close' onClick={onClose}>
+            <button className='modal__close' onClick={props.onClose}>
                 <span>fermer</span> 
                 <FiX size={32} />
             </button>

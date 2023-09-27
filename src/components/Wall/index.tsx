@@ -5,9 +5,10 @@ import stickerWallText from "@/assets/stickerwall-txt.svg"
 import { StickerType } from '@/shared/types';
 import Sticker from "./Sticker";
 import { stickersImg } from '@/shared/types';
-import { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 
-const Wall = () => {
+
+const Wall: FunctionComponent = () => {
 
   // Add sticker on wall
   const [stickers, setStickers] = useState<StickerType[]>([])
@@ -16,8 +17,7 @@ const Wall = () => {
   const addSticker = (e: any) => {
 
       const newSticker: StickerType = {
-        image: stickersImg[count].path,
-        name: stickersImg[count].name,
+        image: stickersImg[count],
         rotation: Math.floor(Math.random() * 40),
         xPosition: e.clientX - 100,
         yPosition: e.clientY - 100,

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import './styles.scss'
 import { FiMenu, FiX, FiLinkedin, FiInstagram, FiGithub } from "react-icons/fi";
 import { AnimatePresence, motion } from 'framer-motion';
 import Updates from '@/components/Updates';
 
-const Navbar = () => {
+const Navbar: FunctionComponent = () => {
 
   // Menu OPEN - CLOSE switches
   const [isToggleOpen, setIsToggleOpen] = useState<boolean>(false);

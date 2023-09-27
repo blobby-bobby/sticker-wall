@@ -1,14 +1,7 @@
+import { StickerType } from "@/shared/types";
 import { FunctionComponent } from "react";
 
-type StickerProps = {
-  image: string,
-  name: string,
-  rotation: number,
-  xPosition: number,
-	yPosition: number,
-}
-
-const Sticker: FunctionComponent<StickerProps> = (props) => {
+const Sticker: FunctionComponent<StickerType> = (props) => {
 
     const stickerStyles:React.CSSProperties = {
         position: "absolute",
@@ -24,7 +17,7 @@ const Sticker: FunctionComponent<StickerProps> = (props) => {
     }
 
   return (
-    <img src={getImageUrl(props.image)} alt={props.name} style={stickerStyles} />
+    <img src={getImageUrl(props.image.path)} alt={props.image.name} style={stickerStyles} />
   )
 }
 
