@@ -1,27 +1,25 @@
-# React + TypeScript + Vite
+# ☺ WELCOME TO THE STICKER WALL ☺ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The sticker wall is pretty simple : click on the wall, it will put a sticker on it.
 
-Currently, two official plugins are available:
+## Concept
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This actual version is just about it for now, a random sticker on that wall. 
+- But hopefully, pretty soon, you will have choice on wich sticker you want to add on that wall.
+- If new ideas of other functionalities comes up, i may be working on it to improve the wall.
 
-## Expanding the ESLint configuration
+## About the stickers
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- I use a sample of 8 stickers that I made for this first version.
+- I would like to grow this collection, try other styles, to allow other functionalities, and just to make this wall funnier.
 
-- Configure the top-level `parserOptions` property like this:
+## Stack
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+This project has been the perfect exercise to strenghten my skills on :
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- React
+- TypeScript
+- Framer Motion
+- SASS
+
+## Enjoy, come & put a sticker the wall
