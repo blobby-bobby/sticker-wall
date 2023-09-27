@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'ClashGrotesk-Regular';
+  src: url(./assets/fonts/ClashGrotesk-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashGrotesk-Semibold';
+  src: url(./assets/fonts/ClashGrotesk-Semibold.ttf) format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --dark1: #242222;
+  --yellow1: #FFEE57;
+  --white1: #F6EFEF;
+  --clash-regular: 'ClashGrotesk-Regular';
+  --clash-semibold: 'ClashGrotesk-Semibold';
+  --xs-font: 12px;
+  --sm-font: 16px;
+  --md-font: 24px;
+  --md-font2: 20px;
+  --lg-font: 32px;
+  --xl-font: 48px;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-family: var(--clash-regular);
+  color: var(--white1);
+  background-color: var(--dark1);
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+body::before {    
+    content: "";
+    background-image: url('./assets/noise.gif');
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.045;
+}
+
+h1 {
+  font-family: var(--clash-semibold);
+}
+
+h2 {
+  font-size: var(--xl-font);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  font-size: var(--lg-font);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #242222;
+  font-family: var(--clash-semibold);
+}

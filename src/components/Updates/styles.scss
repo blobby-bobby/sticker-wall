@@ -1,0 +1,105 @@
+.modal {
+    background: rgba(18, 17, 17, 0.96);
+    border-radius: 12px;
+    border: 1px solid var(--white1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 90vw;
+    min-height: 70vh;
+    padding: 2.5%;
+    margin: 2.5%;
+
+    hr {
+        margin: 2rem 1rem 2rem 0;
+        border: 1px dotted;
+    }
+
+    &__close {
+        display: flex;
+        gap: .5rem;
+        background-color: transparent;
+        color: var(--white1);
+        font-size: var(--md-font2);
+        text-transform: uppercase;
+        border: none;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+
+        > span {
+            margin-top: 2px;
+        }
+    }
+
+    &__container {
+        overflow-y: scroll;
+        height: 60vh;
+    }
+
+    ::-webkit-scrollbar {
+            width: 10px;
+            height: 8px;
+            background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--white1);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--yellow1);
+    }
+}
+
+.update {
+        &__content {
+            display: flex;
+            gap: 2rem;
+
+            img {
+                border-radius: 12px;
+                min-width: 300px;
+                object-fit: contain;
+            }
+
+            &--text {
+                flex-basis: 60%;
+            }
+            
+            p, span, ul {
+                margin-left: 2rem;
+            }
+
+            p.description {
+                font-size: var(--md-font2);
+            }
+
+            span {
+                font-family: var(--clash-semibold);
+                text-transform: uppercase;
+            }
+
+            ul {
+                list-style-type: disc;
+
+            }
+        }
+}
+
+
+// Smaller devices
+@media (max-width: 767px) {
+    .update__content {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &--text {
+            flex-basis: 100%;
+        }
+    }
+}

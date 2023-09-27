@@ -1,0 +1,55 @@
+.wall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+
+    &__graphic {
+        font-family: var(--clash-semibold);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25vh;
+        mix-blend-mode: exclusion;
+
+        &--logo {
+            max-width: 500px;
+        }
+
+        &--guy {
+            width: 72px;
+            margin-top: 2rem;
+        }
+    }
+
+    &__instructions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: .5rem;
+        margin-bottom: 2rem;
+
+        &--hand {
+            font-size: 30px;
+            margin-top: -6px;
+        }
+    }
+}
+
+path {
+    fill: transparent;
+  }
+  
+  text {
+    fill: var(--white);
+    font-size: 40px;
+  }
