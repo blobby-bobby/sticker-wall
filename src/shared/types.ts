@@ -15,16 +15,15 @@ type StickerImage = {
 }
 
 export const stickersImg: StickerImage[] = [
-    {name: "Cheese!!!", path: '/src/assets/static/stickers/cheese.png'},
-    {name: "Dinonosaure!", path: '/src/assets/static/stickers/dinonosor.png'},
-    {name: "Sauce qui peut!", path: '/src/assets/static/stickers/saucequipeut.png'},
-    {name: "Pizza Yolo", path: '/src/assets/static/stickers/pizzayolo.png'},
-    {name: "serpaaaant!", path: '/src/assets/static/stickers/serpaaaant.png'},
-    {name: "Groovy worm", path: '/src/assets/static/stickers/wormy.png'},
-    {name: "Yééé", path: '/src/assets/static/stickers/yee.png'},
-    {name: "Yo", path: '/src/assets/static/stickers/yo.png'},
+    {name: "Cheese!!!", path: 'cheese.png'},
+    {name: "Dinonosaure!", path: 'dinonosor.png'},
+    {name: "Sauce qui peut!", path: 'saucequipeut.png'},
+    {name: "Pizza Yolo", path: 'pizzayolo.png'},
+    {name: "serpaaaant!", path: 'serpaaaant.png'},
+    {name: "Groovy worm", path: 'wormy.png'},
+    {name: "Yééé", path: 'yee.png'},
+    {name: "Yo", path: 'yo.png'},
 ]
-
 
 // Toggle modal
 export interface ModalProps {

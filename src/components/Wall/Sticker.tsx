@@ -1,4 +1,6 @@
-type Props = {
+import { FunctionComponent } from "react";
+
+type StickerProps = {
   image: string,
   name: string,
   rotation: number,
@@ -6,19 +8,23 @@ type Props = {
 	yPosition: number,
 }
 
-const Sticker = ({ image, name, rotation, xPosition, yPosition }: Props) => {
+const Sticker: FunctionComponent<StickerProps> = (props) => {
 
     const stickerStyles:React.CSSProperties = {
         position: "absolute",
-        transform: `rotate(${rotation}deg)`,
-        top: `${yPosition}px`,
-        left: `${xPosition}px`,
+        transform: `rotate(${props.rotation}deg)`,
+        top: `${props.yPosition}px`,
+        left: `${props.xPosition}px`,
         zIndex: 2, 
         pointerEvents: 'none',
     };
 
+    const getImageUrl = (name: string) => {
+      return new URL(`/src/assets/${name}`, import.meta.url).href
+    }
+
   return (
-    <img src={image} alt={name} style={stickerStyles} />
+    <img src={getImageUrl(props.image)} alt={props.name} style={stickerStyles} />
   )
 }
 

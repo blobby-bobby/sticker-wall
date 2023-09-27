@@ -1,6 +1,6 @@
 import { UpdatesType } from '@/shared/types';
 import './styles.scss'
-import updateImg from '@/assets/stickers/cheese.png';
+import updateImg from '@/assets/cheese.png';
 import { FiX } from "react-icons/fi";
 import { AnimatePresence, motion } from 'framer-motion';
 
