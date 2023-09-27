@@ -15,7 +15,7 @@ The sticker wall is pretty simple : click on the wall 🖱️, it will put a sti
 
 ## 🛠 Stack
 
-This project has been the perfect exercise to strenghten my skills on :
+This project has been the perfect exercise to strengthen my skills on :
 
 - React
 - TypeScript
