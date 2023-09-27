@@ -4,9 +4,7 @@ import { FiMenu, FiX, FiLinkedin, FiInstagram, FiGithub } from "react-icons/fi";
 import { AnimatePresence, motion } from 'framer-motion';
 import Updates from '@/components/Updates';
 
-type Props = {}
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
 
   // Menu OPEN - CLOSE switches
   const [isToggleOpen, setIsToggleOpen] = useState<boolean>(false);

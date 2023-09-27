@@ -7,9 +7,7 @@ import Sticker from "./Sticker";
 import { stickersImg } from '@/shared/types';
 import { useState } from 'react';
 
-type Props = {}
-
-const Wall = (props: Props) => {
+const Wall = () => {
 
   // Add sticker on wall
   const [stickers, setStickers] = useState<StickerType[]>([])
