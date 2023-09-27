@@ -13,7 +13,7 @@ The sticker wall is pretty simple : click on the wall 🖱️, it will put a sti
 - I use a sample of 8 stickers that I made for this first version.
 - I would like to grow this collection, try other styles, to allow other functionalities, and just to make this wall funnier.
 
-## 🛠 Stack
+## Stack 🛠
 
 This project has been the perfect exercise to strengthen my skills on :
 
