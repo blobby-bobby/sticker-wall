@@ -1,5 +1,7 @@
 # 👽 WELCOME TO THE STICKER WALL 👽 
 
+![Capture](./src/assets/sticker-wall-capture.jpg)
+
 The sticker wall is pretty simple : click on the wall 🖱️, it will put a sticker on it 👾.
 
 ## Concept
