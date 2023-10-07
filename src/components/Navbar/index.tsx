@@ -1,8 +1,12 @@
 import { FunctionComponent, useState } from 'react';
 import './styles.scss'
-import { FiMenu, FiX, FiLinkedin, FiInstagram, FiGithub } from "react-icons/fi";
+import { FiMenu, FiX, FiLinkedin, FiInstagram, FiGithub, FiFile, FiFacebook, FiTwitter } from "react-icons/fi";
 import { AnimatePresence, motion } from 'framer-motion';
 import Updates from '@/components/Updates';
+import { updatesData } from '@/shared/types';
+import useModal from '@/hooks/useModal';
+import Modal from '../Modal';
+import shareGraphic from "@/assets/soyez-sympas-partagez.gif"
 
 const Navbar: FunctionComponent = () => {
 
@@ -11,13 +15,19 @@ const Navbar: FunctionComponent = () => {
   const toggleMenu = () => { setIsToggleOpen((prevToggle) => !prevToggle) }
 
   // OPEN modal
-  const [isUpdatesOpen, setIsUpdatesOpen] = useState<boolean>(false);
-  const openUpdates = () => { 
-    setIsUpdatesOpen(true); 
-    setIsToggleOpen(false);
-  }
-  const closeUpdates = () => {setIsUpdatesOpen(false)}
+  const { isOpen, modalOptions, openModal, closeModal } = useModal();
 
+  // Open updates
+  const openUpdates = () => {
+    openModal({
+      icon: <FiFile size={42} />,
+      title: "Updates",
+      color: "#B0BDC5",
+    });
+    toggleMenu();
+  }
+
+  
   // Menu animations
   const menuVars = {
     initial: {
@@ -101,18 +111,46 @@ const Navbar: FunctionComponent = () => {
           {/* LIEN EXT => REPO GITHUB */}
           <div className='primary-menu__links--item'>
             <motion.div variants={linksVars}>
-              <a href="https://github.com/blobby-bobby/sticker-wall" target='_blank'>Code source</a>
+              <a aria-label='code-source' href="https://github.com/blobby-bobby/sticker-wall" target='_blank'>Code source</a>
             </motion.div>
           </div>
 
           {/* MODALE * UPDATES Link */}
           <div className='primary-menu__links--item'>
             <motion.div variants={linksVars} onClick={openUpdates}>
-              <a href="#">Updates - journal</a>
+              <a aria-label='updates'>Updates - journal</a>
             </motion.div>
           </div>
 
         </motion.nav>
+
+        {/* Section SOYEZ SYMPAS, PARTAGEZ */}
+          <div className="primary-menu__share">
+            <img src={shareGraphic} alt="Soyez sympas, partagez !" />
+            <div>
+              {/* ON FACEBOOK */}
+              <a className="primary-menu__share--link" 
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A//sticker-wall.vercel.app/" 
+                target='_blank'> 
+                  <FiFacebook size={20} /> 
+              </a>
+
+              {/* ON TWITTER */}
+              <a className="primary-menu__share--link" 
+                  href="https://twitter.com/intent/tweet?url=https://sticker-wall.vercel.app/&hashtags=sticker,click&text=Soyez sympas, partagez!" 
+                  target='_blank'> 
+                <FiTwitter size={20}/> 
+              </a>
+              
+              {/* ON LINKEDIN */}
+              <a className="primary-menu__share--link" 
+                href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//sticker-wall.vercel.app/"  
+                target='_blank'> 
+                  <FiLinkedin size={20}/>
+              </a>
+            </div>
+
+          </div>
 
         {/* BOTTOM of nav */}
         <motion.div className='primary-menu__socials' variants={linksVars} initial="initial" animate="open">
@@ -129,8 +167,11 @@ const Navbar: FunctionComponent = () => {
     </div>
 
     {/* MODAL UPDATES */}
-        <Updates isUpdatesOpen={isUpdatesOpen} onClose={closeUpdates} />
-
+        {modalOptions && (
+          <Modal isOpen={isOpen} {...modalOptions} onClose={closeModal}>
+              {updatesData.map((data, i) => ( <Updates {...data} key={i} /> ))}
+          </Modal>
+        )}
     </>
   )
 }

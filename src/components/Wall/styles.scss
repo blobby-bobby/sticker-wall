@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     position: relative;
     text-transform: uppercase;
@@ -11,17 +11,21 @@
     box-sizing: border-box;
     overflow: hidden;
     user-select: none;
+    background-color: var(--dark1);
+    background-image: url('../../assets/noise.gif');
 
     &__graphic {
         font-family: var(--clash-semibold);
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 25vh;
+        justify-content: center;
+        height: 80vh;
         mix-blend-mode: exclusion;
 
         &--logo {
             max-width: 500px;
+            pointer-events: none;
         }
 
         &--guy {
@@ -62,7 +66,6 @@ text {
         min-height: 95%;
         &__graphic {
             max-width: 310px;
-            margin-bottom: 15vh;
 
             &--curvedtext {
                 transform: scale(0.75);

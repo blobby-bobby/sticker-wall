@@ -1,21 +1,19 @@
+@mixin round-button-flex($size) {
+    width: $size;
+    height: $size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all .2s ease;
+}
+
 .nav-opening {
     position: fixed;
     top: 0;
     right: 0;
     z-index: 10;
     color: var(--dark1);
-}
-
-.toggler {
-    background-color: var(--yellow1);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
 .primary-menu {
@@ -47,10 +45,43 @@
         &--item { 
             margin: 2rem 0;
             overflow-y: hidden;
+            cursor: pointer;
             transition: all .3s ease-out;
 
             &:hover {
                 transform: translateX(-20px);
+            }
+        }
+    }
+
+    &__share {
+        position: relative;
+        width: fit-content;
+
+        >img {
+            pointer-events: none;
+            max-width: 320px;
+            object-fit: contain;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        >div {
+            display: flex;
+            gap: 1rem;
+            justify-content: end;
+            margin-right: 4rem;
+        }
+
+        &--link {
+            @include round-button-flex(36px);
+            border: 2px solid var(--dark1);
+
+            &:hover {
+                background-color: var(--dark1);
+                color: var(--white1);
             }
         }
     }
@@ -64,15 +95,9 @@
         justify-content: end;
 
         &--link {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
+            @include round-button-flex(26px);
             background-color: var(--dark1);
             color: var(--white1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all .3s ease;
 
             &:hover {
                 opacity: 0.75;
@@ -96,6 +121,14 @@
 
         &__socials {
             justify-content: center;
+        }
+
+        &__share {
+            margin-left: 6rem;
+
+            > div {
+                justify-content: center;
+            }
         }
     } 
 }

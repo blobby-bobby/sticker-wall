@@ -2,42 +2,28 @@ import './styles.scss'
 import ReactCurvedText from "react-curved-text";
 import stickGuy from "@/assets/stickerwall-guy.svg"
 import stickerWallText from "@/assets/stickerwall-txt.svg"
-import { StickerType } from '@/shared/types';
 import Sticker from "./Sticker";
-import { stickersImg } from '@/shared/types';
-import { FunctionComponent, useState } from 'react';
-
+import { FunctionComponent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { StickersState, addStickerToWall } from '@/reducers/stickers';
 
 const Wall: FunctionComponent = () => {
 
-  // Add sticker on wall
-  const [stickers, setStickers] = useState<StickerType[]>([])
-  const [count, setCount] = useState<number>(0)
+  // FONCTIONNALITE CLIC = STICKER
+  const dispatch = useDispatch()
+  const stickers = useSelector((state: { stickers: StickersState }) => state.stickers.value);
 
-  const addSticker = (e: any) => {
-
-      const newSticker: StickerType = {
-        image: stickersImg[count],
-        rotation: Math.floor(Math.random() * 40),
-        xPosition: e.clientX - 100,
-        yPosition: e.clientY - 100,
-      };
-      setStickers([...stickers, newSticker]);
-      
-      setCount((prevCount) => prevCount + 1)
-
-      if (count === stickersImg.length - 1) {
-        setCount(0)
-      }
+  // La fonction pour ajouter un sticker sur le mur
+  const handleAddSticker = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { clientX, clientY } = e;
+    dispatch(addStickerToWall({xPosition: clientX - 100, yPosition: clientY -100}));
   }
 
   return (
-    <div className="wall" onClick={addSticker}>
+    <div className="wall" id="snapit" onClick={handleAddSticker}>
       {/* WHERE THE STICKER WALL HAPPENS, I GUESS, WHERE THE ACTION OF CLICKING ADDS A STICKER */}
 
-      {stickers.map((data, i) => (
-        <Sticker key={i} {...data} />
-      ))}
+      {stickers.map((data: any, i: number) => ( <Sticker key={i} {...data} />))}
 
       {/* DECORATIONS & INSTRUCTIONS FOR THE WALL */}
         <div className='wall__graphic'>
