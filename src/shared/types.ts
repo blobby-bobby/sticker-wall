@@ -28,6 +28,8 @@ export const stickersImg: StickerImage[] = [
     {name: "lemon makes you dance", path: 'lemon.png'},
     {name: "Ouéé", path: 'nieyyyy-statue.png'},
     {name: "lumière !!", path: 'lumiere.png'},
+    {name: "annoying explorer", path: 'annoyingexplorer.png'},
+    {name: "inflammable", path: 'inflammable.gif'},
 ]
 
 // Toggle modal

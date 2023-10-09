@@ -72,7 +72,7 @@ const Navbar: FunctionComponent = () => {
   }
 
   // Stagger animation links
-  const containerVars = {
+  const linksContainerVars = {
     initial: {
       transition: {
         staggerChildren: 0.2,
@@ -84,6 +84,27 @@ const Navbar: FunctionComponent = () => {
         delayChildren: 0.1,
         staggerChildren: 0.2,
         staggerDirection: 1,
+      }
+    }
+  }
+  
+  // Links animations
+  const shareVars = {
+    initial: {
+      opacity: 0,
+      scale: 0.8,
+      transition: {
+        duration: 0.3,
+        ease: [0.37, 0, 0.63, 1],
+      }
+    },
+    open: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.8,
+        duration: 0.25,
+        ease: [0, 0.55, 0.45, 1]
       }
     }
   }
@@ -107,7 +128,7 @@ const Navbar: FunctionComponent = () => {
         </button>
 
         {/* Projects Links */}
-        <motion.nav variants={containerVars} initial="initial" animate="open" exit="initial" className='primary-menu__links'>
+        <motion.nav variants={linksContainerVars} initial="initial" animate="open" exit="initial" className='primary-menu__links'>
           {/* LIEN EXT => REPO GITHUB */}
           <div className='primary-menu__links--item'>
             <motion.div variants={linksVars}>
@@ -125,7 +146,7 @@ const Navbar: FunctionComponent = () => {
         </motion.nav>
 
         {/* Section SOYEZ SYMPAS, PARTAGEZ */}
-          <div className="primary-menu__share">
+          <motion.div className="primary-menu__share" variants={shareVars} initial="initial" animate="open">
             <img src={shareGraphic} alt="Soyez sympas, partagez !" />
             <div>
               {/* ON FACEBOOK */}
@@ -150,7 +171,7 @@ const Navbar: FunctionComponent = () => {
               </a>
             </div>
 
-          </div>
+          </motion.div>
 
         {/* BOTTOM of nav */}
         <motion.div className='primary-menu__socials' variants={linksVars} initial="initial" animate="open">
