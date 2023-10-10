@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     position: relative;
     margin: 0;
@@ -84,9 +84,8 @@ text {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 577px) {
     .instructions {
-        padding: 1rem 2rem;
-        margin-bottom: 1rem;
+        padding: 2rem 1rem;
     }
 }
