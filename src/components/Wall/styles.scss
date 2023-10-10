@@ -69,7 +69,6 @@ text {
 
 @media (max-width: 1024px) {
     .wall {
-        min-height: 95%;
         &__graphic {
             max-width: 290px;
 
@@ -87,6 +86,7 @@ text {
 
 @media (max-width: 576px) {
     .instructions {
+        padding: 1rem 2rem;
         margin-bottom: 1rem;
     }
 }
