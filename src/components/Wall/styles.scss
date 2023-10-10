@@ -46,8 +46,10 @@
     text-align: center;
     text-transform: uppercase;
     position: fixed;
+    z-index: 0;
     bottom: 0;
     box-sizing: border-box;
+    pointer-events: none;
 
     &--hand {
         font-size: 30px;
