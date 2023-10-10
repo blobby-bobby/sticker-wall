@@ -6,7 +6,6 @@
     height: 100dvh;
     width: 100vw;
     position: relative;
-    text-transform: uppercase;
     margin: 0;
     box-sizing: border-box;
     overflow: hidden;
@@ -16,6 +15,7 @@
 
     &__graphic {
         font-family: var(--clash-semibold);
+        text-transform: uppercase;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -33,23 +33,29 @@
             margin-top: 2rem;
         }
     }
+}
 
-    &__instructions {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        gap: .5rem;
-        margin: 2rem;
-        text-align: center;
+// INstructions block
+.instructions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: .5rem;
+    padding: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
 
-        &--hand {
-            font-size: 30px;
-            margin-top: -6px;
-        }
+    &--hand {
+        font-size: 30px;
+        margin-top: -6px;
     }
 }
 
+// curved text
 path {
     fill: transparent;
   }

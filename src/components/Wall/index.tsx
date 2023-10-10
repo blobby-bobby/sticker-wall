@@ -20,6 +20,7 @@ const Wall: FunctionComponent = () => {
   }
 
   return (
+    <>
     <div className="wall" id="snapit" onClick={handleAddSticker}>
       {/* WHERE THE STICKER WALL HAPPENS, I GUESS, WHERE THE ACTION OF CLICKING ADDS A STICKER */}
 
@@ -37,13 +38,14 @@ const Wall: FunctionComponent = () => {
           <img src={stickGuy} alt="sticker-wall-guy"  className='wall__graphic--guy'/>
 
         </div>
-
-        <div className="wall__instructions">
-          <span className='wall__instructions--hand'>☝️</span>
-          <p>Clique où ça te chante pour coller un sticker sur le mur</p>
-          <span className='wall__instructions--hand'>☝️</span>
-        </div>
     </div>
+
+    <div className="instructions">
+      <span className='instructions--hand'>☝️</span>
+      <p>Clique où ça te chante pour coller un sticker sur le mur</p>
+      <span className='instructions--hand'>☝️</span>
+    </div>
+    </>
   )
 }
 
