@@ -90,4 +90,10 @@ text {
     .instructions {
         padding: 1rem;
     }
+
+    .wall__sticker {
+        max-height: 170px;
+        width: auto;
+        object-fit: contain;
+    }
 }

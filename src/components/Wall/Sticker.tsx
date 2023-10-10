@@ -19,7 +19,7 @@ const Sticker: FunctionComponent<StickerType> = (props) => {
     
 
   return (
-    <img src={getImageUrl(props.image.path)} alt={props.image.name} style={stickerStyles} />
+    <img src={getImageUrl(props.image.path)} alt={props.image.name} style={stickerStyles} className="wall__sticker" />
   )
 }
 
