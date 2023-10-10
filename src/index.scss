@@ -34,9 +34,7 @@ body {
   display: flex;
   place-items: center;
   justify-content: center;
-  height: -webkit-fill-avalable;
-  height: -moz-available;
-  height: stretch;
+  height: 100vh;
   width: 100vw;
   position: relative;
   font-family: var(--clash-regular);
