@@ -84,3 +84,9 @@ text {
         font-size: var(--xs-font);
     }
 }
+
+@media (max-width: 576px) {
+    .instructions {
+        margin-bottom: 1rem;
+    }
+}
