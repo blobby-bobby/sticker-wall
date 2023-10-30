@@ -15,9 +15,9 @@ const Updates: FunctionComponent<UpdatesType> = (props) => {
           <div className='update-row__txt'>
             <h3>{props.day} ::: {props.title}</h3>
             <p>{props.description}</p>
-            <p>Et pour la suite ?</p>
+           {props.next? <p>Et pour la suite ?</p> : ""}
             <ul>
-              {props.next.map((item, i) => (
+              {props.next?.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>

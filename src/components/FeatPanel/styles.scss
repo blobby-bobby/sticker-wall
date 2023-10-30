@@ -5,4 +5,14 @@
     width: fit-content;
     height: fit-content;
     z-index: 5;
+    margin: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    
+    @media (max-width: 768px) { 
+        gap: 1.2rem;
+        margin: 1.2rem;
+    }
 }
+

@@ -53,10 +53,11 @@ body {
 @mixin round-button {
   width: 52px;
   box-shadow: 5px 5px var(--dark1);
-  margin: 2rem;
 
-  @media (max-width: 577px) {
-    margin: 1.2rem;
+  &:active {
+    box-shadow: none;
+    box-shadow: 2px 2px var(--dark1);
+    margin: 4px 0 0 4px;
   }
 }
 
@@ -108,7 +109,7 @@ body {
   margin: 1rem;
   padding: .5rem;
   height: 320px;
-  max-width: 320px;
+  max-width: 300px;
   object-fit: cover;
 }
 

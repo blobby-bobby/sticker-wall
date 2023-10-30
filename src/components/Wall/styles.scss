@@ -26,6 +26,8 @@
         &--logo {
             max-width: 500px;
             pointer-events: none;
+            height: auto;
+            object-fit: contain;
         }
 
         &--guy {
@@ -35,7 +37,7 @@
     }
 }
 
-// INstructions block
+// Instructions block
 .instructions {
     display: flex;
     align-items: center;
@@ -72,13 +74,12 @@ text {
 @media (max-width: 1024px) {
     .wall {
         &__graphic {
-            max-width: 290px;
+            max-width: 80%;
 
             &--curvedtext {
                 transform: scale(0.75);
             }
         }
-
     } 
 
     .instructions {
@@ -91,9 +92,15 @@ text {
         padding: 1rem;
     }
 
-    .wall__sticker {
-        max-height: 170px;
-        width: auto;
-        object-fit: contain;
+    .wall {
+        &__sticker {
+            max-height: 170px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        &__graphic--logo {
+            max-width: 100%;
+        }
     }
 }

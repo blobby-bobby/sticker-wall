@@ -190,7 +190,7 @@ const Navbar: FunctionComponent = () => {
     {/* MODAL UPDATES */}
         {modalOptions && (
           <Modal isOpen={isOpen} {...modalOptions} onClose={closeModal}>
-              {updatesData.map((data, i) => ( <Updates {...data} key={i} /> ))}
+              {updatesData.map((data, i) => ( <Updates {...data} key={i} /> )).reverse()}
           </Modal>
         )}
     </>

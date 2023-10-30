@@ -46,7 +46,7 @@ export interface UpdatesType {
 	image: string,
     title: string,
 	description: string,
-	next: string[],
+	next?: string[],
 }
 
 // Updates data
@@ -65,4 +65,10 @@ export const updatesData: UpdatesType[] = [
       description: "Et voilà, le Sticker Wall est en ligne. Pour cette première version, la fonctionnalité '1 clic, 1 sticker sur le mur' est là, et les bases ont été posées pour faire évoluer ce Sticker Wall =). Cette version de départ comporte un kit de départ de 8 stickers qui devrait s'étoffer dans le temps.",
       next: ["plus de stickers", "pourquoi pas ajouter un panneau qui permettra de choisir le sticker à coller sur le mur", "personnaliser le curseur"],
     },
+    {
+        day: "30/10/2023",
+        image: 'annoyingexplorer.png',
+        title: "ça marche mieux sur Firefox, non ? ^^",
+        description: "J'ai eu un retour sur un souci de capture d'écran depuis Firefox. J'y ai probablement trouvé une solution, fonctionnelle, croisons les doigts 🤞.",
+      },
 ]

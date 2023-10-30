@@ -22,18 +22,19 @@ const FeatPanel: FunctionComponent = () => {
 
   // Capture écran
   const handleSnapshot = () => {
-    if (stickers.length >= 1) {
-      const element = document.getElementById('snapit');
-    if (element) {
-      htmlToImage.toJpeg(element, { quality: 0.95 })
-        .then(function (dataUrl: string) {
-          dispatch(takeScreenshot(dataUrl))
-        });
-    } else {
-      // Si le mur n'est pas trouvé
-      console.error("Capture impossible : l'élément avec l'ID 'snapit' n'a pas été trouvé.");
-    }
-    
+    setTimeout(() => {
+      if (stickers.length >= 1) {
+        const element = document.getElementById('snapit');
+      if (element) {
+        htmlToImage.toJpeg(element, { quality: 0.95 })
+          .then(function (dataUrl: string) {
+            dispatch(takeScreenshot(dataUrl))
+          });
+      } else {
+        // Si le mur n'est pas trouvé
+        console.error("Capture impossible : l'élément avec l'ID 'snapit' n'a pas été trouvé.");
+      }
+      
       // OPEN SCREENSHOT MODAL
       openModal({ 
         title: "Say Cheese!!!",
@@ -41,7 +42,8 @@ const FeatPanel: FunctionComponent = () => {
         color: "#FFEE57",
         contentComponent: <SnapshotTabContent onClose={closeModal} />
         })
-    }
+      }
+    }, 0.1);
   }
 
   // ANIM DELETE BUTTON

@@ -1,7 +1,7 @@
 import './styles.scss'
 import ReactCurvedText from "react-curved-text";
-import stickGuy from "@/assets/stickerwall-guy.svg"
-import stickerWallText from "@/assets/stickerwall-txt.svg"
+import stickGuy from "@/assets/stickerwall-guy.png"
+import stickerWallText from "@/assets/stickerwall-txt.png"
 import Sticker from "./Sticker";
 import { FunctionComponent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
