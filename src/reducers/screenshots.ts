@@ -1,30 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';  
 
-export type ScreenshotsState = {
-	value: string;
-	count: number;
-  }
+interface ScreenshotsState {
+	imgPath: string | null,
+	id: number,
+}
 
-const initialState: ScreenshotsState = {  
- value: "", // pour recueillir l'URL de l'image générée
- count: 1, // pour indenter les noms de l'image lors du téléchargement
+const initialState: ScreenshotsState = {
+	imgPath: null,
+	id: 0,
 };
 
 export const screenshotsSlice = createSlice({  
 	
 	name: 'screenshots',
-	
 	initialState,  
 	    reducers: {  
 	        takeScreenshot: (state, action) => {  
-		        state.value = action.payload; 
+		        state.imgPath = action.payload; 
 	        }, 
 			downloadScreenshot: (state) => {
-				state.count++;
+				state.id += 1;
 			}
 	},  
 });  
 
-// Pas le même actions que dans l'init du reducer (un "s" en plus)
 export const { takeScreenshot, downloadScreenshot } = screenshotsSlice.actions;
 export default screenshotsSlice.reducer;

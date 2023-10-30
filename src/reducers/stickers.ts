@@ -8,7 +8,7 @@ export interface StickersState {
 
 const initialState: StickersState = {
   value: [],
-  count: 0, // Mon compteur
+  count: 0,
 };
 
 export const stickersSlice = createSlice({
@@ -16,21 +16,15 @@ export const stickersSlice = createSlice({
   initialState,
   reducers: {
     addStickerToWall: (state, action: PayloadAction<{ xPosition: number; yPosition: number }>) => {
-      let newSticker: StickerType = {
-        image: stickersImg[state.count],
-        rotation: Math.floor(Math.random() * 52),
-        xPosition: action.payload.xPosition,
-        yPosition: action.payload.yPosition,
-        isNegative: Math.floor(Math.random() * 2),
-      };
+      const { xPosition, yPosition } = action.payload;
+      const image = stickersImg[state.count];
+      const rotation = Math.floor(Math.random() * 52);
+      const isNegative = Math.floor(Math.random() * 2);
 
-      // Incrémentation de state.count et réinitialisation pour relancer la boucle des stickers
-      state.count++;
-      if (state.count === stickersImg.length) {
-        state.count = 0;
-      }
+      state.value.push({ image, rotation, xPosition, yPosition, isNegative });
 
-      state.value.push(newSticker);
+      // Incrémentation de state.count avec une boucle
+      state.count = (state.count + 1) % stickersImg.length;
     },
 
     resetStickers: (state) => {
@@ -39,6 +33,5 @@ export const stickersSlice = createSlice({
   },
 });
 
-// Pas le même actions que dans l'init du reducer (un "s" en plus)
 export const { addStickerToWall, resetStickers } = stickersSlice.actions;
 export default stickersSlice.reducer;

@@ -1,17 +1,8 @@
 import Navbar from "./components/Navbar"
 import Wall from "./components/Wall"
 import FeatPanel from "./components/FeatPanel"
-import stickers from "./reducers/stickers";
-import screenshots from "./reducers/screenshots";
-
-// 1 - import Provider et Configure Store
+import store from "./store/store";
 import { Provider } from 'react-redux';  
-import { configureStore } from '@reduxjs/toolkit';  
-
-// 2 - définition du reducer
-const store = configureStore({  
- reducer: { stickers, screenshots },  
-});
 
 function App() {
 
